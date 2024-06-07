@@ -168,6 +168,11 @@ section.main {
         overflow-y: scroll;
         max-height: 300px;
       }
+      @media (max-width: 482px) {
+        #tasks {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
     }
   }
 }

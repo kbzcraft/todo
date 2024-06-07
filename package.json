@@ -2,14 +2,18 @@
   "name": "todo",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://kbzcraft.github.io/todo/",
   "type": "module",
   "scripts": {
     "dev": "vite --port 4241",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "@vite-pwa/assets-generator": "^0.2.4",
+    "gh-pages": "^6.1.1",
     "vite": "^5.2.10",
     "vite-plugin-pwa": "^0.20.0",
     "workbox-core": "^7.1.0",
