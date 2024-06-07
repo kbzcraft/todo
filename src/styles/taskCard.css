@@ -1,0 +1,21 @@
+div.taskCard {
+  display: flex;
+  background-color: var(--color-secondary);
+  max-width: 400px;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-radius: 10px;
+  min-height: 140px;
+  .taskContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}

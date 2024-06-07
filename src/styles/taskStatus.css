@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"); /*"Inter", sans-serif;*/
+.taskStatus {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  max-height: 150px;
+  justify-content: space-between;
+  h1 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+  }
+  strong {
+    font-size: 50px;
+    font-weight: 900;
+    font-family: "Roboto";
+  }
+}
+.taskStatus.pending {
+  background-color: var(--color-quinary);
+}
+.taskStatus.completed {
+  background-color: var(--color-secondary);
+}

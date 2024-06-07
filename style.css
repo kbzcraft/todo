@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); /* "Poppins" */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); /* "Roboto" */
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap");
+/* font-family: "Abhaya Libre", serif; */
+
+/* font-family: "Cedarville Cursive", cursive; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #faf7f2;
+  --color-secondary: #f0d1a8;
+  --color-tertiary: #f87777;
+  --color-quaternary: #f0d1a8;
+  --color-quinary: #c4a49f;
+  --color-senary: #5c9967;
+  --color-septenary: #63605f;
+  --color-background: #ffffff;
+  --color-nav: #f2eaea;
+  --color-text: #000;
+}
+/* F2EAEA */
+.dark-mode {
+  --color-primary: #faf7f2;
+  --color-secondary: #f0d1a8;
+  --color-tertiary: #f87777;
+  --color-quaternary: #f0d1a8;
+  --color-quinary: #c4a49f;
+  --color-senary: #5c9967;
+  --color-septenary: #63605f;
+  --color-background: #ffffff;
+  --color-nav: #f2eaea;
+  --color-text: #000;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+main {
+  max-width: 1440px;
+  width: calc(100vw - 2px);
+
+  margin-inline: auto;
+}
+nav {
+  background-color: var(--color-nav);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 20px;
+  height: 40px;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  div.toggle {
+    display: flex;
+    display: none;
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    background: #c4c2c2;
+    position: relative;
+    align-items: center;
+    padding-inline: 1.5px;
+    justify-content: flex-start;
+    div {
+      width: 45%;
+      aspect-ratio: 1/1;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.5s ease;
+    }
+  }
+  div.toggle.toggle-dark {
+    justify-content: flex-end;
+  }
+}
+h1.intro {
+  text-align: center;
+  margin-inline: auto;
+  margin-block: 0.5rem;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 800;
+  font-size: 35px;
+}
+
+section.main {
+  background: var(--color-primary);
+  width: 90vw;
+  margin-inline: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  div.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    div.todayWeekday {
+      font-family: "Cedarville Cursive", cursive;
+      font-size: 30px;
+      color: salmon;
+    }
+  }
+
+  div.body {
+    display: flex;
+
+    width: 100%;
+    gap: 20px;
+
+    div.left.date {
+      /* background-color: rebeccapurple; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .localDate {
+        font-family: "Abhaya Libre", serif;
+        font-size: 22px;
+        font-weight: 600;
+      }
+      .maxWidth940pxFooter {
+        display: none;
+      }
+    }
+    div.right.todos {
+      /* background-color: rebeccapurple; */
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      div.top {
+        /* background-color: red; */
+        width: 100%;
+        display: flex;
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        .select {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+          select {
+            background-color: var(--color-secondary);
+            padding-block: 5px;
+            padding-inline: 10px;
+            border-radius: 5px;
+          }
+        }
+      }
+      #tasks {
+        margin-top: 35px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        overflow-y: scroll;
+        max-height: 300px;
+      }
+    }
+  }
+}
+
+.add-task {
+  font-family: "Ubuntu Mono", monospace;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  /* justify-content: center; */
+  div {
+    /* max-width: 175px; */
+    input {
+      all: unset;
+      border: 1.5px solid #0c0c0c;
+      height: 30px;
+      padding-inline: 2px;
+      border-radius: 10px;
+    }
+  }
+  button {
+    all: unset;
+    width: 50px;
+    height: 30px;
+    background: #65ca77;
+    position: relative;
+    display: grid;
+    place-items: center;
+    border-radius: 15%;
+    /* border: none; */
+    span {
+      display: block;
+      width: 15px;
+      height: 2px;
+      background: #000;
+      position: absolute;
+    }
+    .a {
+      rotate: 90deg;
+    }
+  }
+}
+
+#tasks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.searchDiv {
+  display: flex;
+  border: 1px solid var(--color-text);
+  border-radius: 5px;
+  padding: 5px 10px;
+  input {
+    all: unset;
+  }
+}
+
+footer {
+  display: flex;
+  gap: 30px;
+  div.statusInfo {
+    display: flex;
+    gap: 20px;
+  }
+}
+.socialMediaIcons {
+  i {
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .body .left.date {
+    display: none !important;
+  }
+}
+
+@media (max-width: 796px) {
+  footer {
+    flex-direction: column;
+    .statusInfo {
+      div {
+        max-width: 300px;
+        width: 50vw;
+      }
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 482px) {
+  footer {
+    .statusInfo {
+      div {
+        width: 50vw;
+        h1 {
+          font-size: 10px;
+        }
+      }
+    }
+    .extraInfo {
+      .totalTaskCreated {
+        h1 {
+          font-size: 12px;
+          width: 7ch;
+          text-align: center;
+          font-weight: 600;
+          line-height: 12px;
+        }
+        strong {
+          font-size: 24px;
+        }
+      }
+      .socialMediaIconsParent {
+        .socialMediaIcons {
+          i {
+            svg {
+              width: 25px;
+              aspect-ratio: 1/1;
+            }
+          }
+        }
+      }
+    }
+  }
+  .todayWeekday {
+    font-size: 20px !important;
+  }
+  h1.intro {
+    font-size: 25px;
+    max-width: 70vw;
+    line-height: 22px;
+    margin-block: 15px;
+  }
+}
+
+@media (max-width: 602px) {
+  .add-task {
+    div {
+      max-width: 175px;
+    }
+  }
+}
